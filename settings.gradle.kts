@@ -1,9 +1,9 @@
-rootProject.name = "springboot-template"
+rootProject.name = "springboot-simple-template"
 
 include(
-    "subp-domain",
-    "subp-jdbc",
-    "subp-jpa",
+    "subp-persistence",
+    "subp-api-client",
+    "subp-cache",
     "subp-common",
     "subp-server"
 )
