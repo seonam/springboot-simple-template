@@ -39,3 +39,6 @@ out/
 #
 **/.jqwik-database
 infra/mysql/data/**
+
+#
+node_modules
