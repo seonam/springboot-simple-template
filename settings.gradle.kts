@@ -1,11 +1,10 @@
 rootProject.name = "springboot-simple-template"
 
 include(
-    "subp-persistence",
-    "subp-api-client",
-    "subp-cache",
-    "subp-common",
-    "subp-server"
+    "template-persistence",
+    "template-client",
+    "template-common",
+    "template-server"
 )
 
 enableFeaturePreview("VERSION_CATALOGS")
