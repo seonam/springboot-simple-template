@@ -1,5 +1,5 @@
 dependencies {
-    implementation(project(":template-persistence"))
+    implementation(project(":template-infrastructure:jpa"))
     implementation(project(":template-common"))
     implementation(libs.spring.boot.starter.web)
 }

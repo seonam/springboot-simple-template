@@ -1,6 +1,6 @@
 package kr.disdong.springboot.template.server.domain.user.service
 
-import kr.disdong.springboot.template.persistence.domain.user.repository.UserRepository
+import kr.disdong.springboot.template.infrastructure.jpa.domain.user.repository.UserRepository
 import kr.disdong.springboot.template.server.domain.user.dto.CreateUserBody
 import kr.disdong.springboot.template.server.domain.user.dto.CreateUserResponse
 import kr.disdong.springboot.template.server.domain.user.exception.UserNotFound

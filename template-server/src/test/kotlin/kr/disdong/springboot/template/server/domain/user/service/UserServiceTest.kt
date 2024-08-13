@@ -1,7 +1,7 @@
 package kr.disdong.springboot.template.server.domain.user.service
 
-import kr.disdong.springboot.template.persistence.domain.user.model.UserEntity
-import kr.disdong.springboot.template.persistence.domain.user.repository.UserRepository
+import kr.disdong.springboot.template.infrastructure.jpa.domain.user.model.UserEntity
+import kr.disdong.springboot.template.infrastructure.jpa.domain.user.repository.UserRepository
 import kr.disdong.springboot.template.server.domain.user.dto.CreateUserBody
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull

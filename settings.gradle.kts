@@ -1,8 +1,8 @@
 rootProject.name = "springboot-simple-template"
 
 include(
-    "template-persistence",
-    "template-client",
+    "template-infrastructure:jpa",
+    "template-infrastructure:feign",
     "template-common",
     "template-server"
 )
