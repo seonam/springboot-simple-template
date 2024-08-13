@@ -7,8 +7,6 @@ include(
     "template-server"
 )
 
-enableFeaturePreview("VERSION_CATALOGS")
-
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
@@ -23,7 +21,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("kr.disdong:spring-version-catalog:0.0.27")
+            from("kr.disdong:spring-version-catalog:0.0.31")
         }
     }
 }
