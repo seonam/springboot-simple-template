@@ -1,25 +1,26 @@
 package kr.disdong.springboot.template.server.domain.user.service
 
-import kr.disdong.springboot.template.infrastructure.jpa.domain.user.repository.UserRepository
+import kr.disdong.springboot.template.core.domain.user.helper.UserCreator
+import kr.disdong.springboot.template.core.domain.user.helper.UserReader
+import kr.disdong.springboot.template.core.domain.user.model.UserCreateOption
 import kr.disdong.springboot.template.server.domain.user.dto.CreateUserBody
 import kr.disdong.springboot.template.server.domain.user.dto.CreateUserResponse
-import kr.disdong.springboot.template.server.domain.user.exception.UserNotFound
 import org.springframework.stereotype.Service
-import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserService(
-    private val userRepository: UserRepository,
+    private val userReader: UserReader,
+    private val userCreator: UserCreator,
 ) {
 
     fun getByUserId(userId: Long) =
-        CreateUserResponse.of(
-            userRepository.findByUserId(userId)
-                ?: throw UserNotFound(userId)
+        CreateUserResponse.from(
+            userReader.getByUserId(userId)
         )
 
-    @Transactional
     fun create(request: CreateUserBody): CreateUserResponse {
-        return CreateUserResponse.of(userRepository.save(request.toUserEntity()))
+        return CreateUserResponse.from(userCreator.create(request.toOption()))
     }
+
+    private fun CreateUserBody.toOption() = UserCreateOption(name = name, phone = phone)
 }

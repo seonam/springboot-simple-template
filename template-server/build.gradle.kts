@@ -1,6 +1,6 @@
 dependencies {
-    implementation(project(":template-infrastructure:jpa"))
     implementation(project(":template-common"))
+    implementation(project(":template-core"))
     implementation(libs.spring.boot.starter.web)
 }
 

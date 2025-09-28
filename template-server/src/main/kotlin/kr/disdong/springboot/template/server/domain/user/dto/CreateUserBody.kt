@@ -1,14 +1,14 @@
 package kr.disdong.springboot.template.server.domain.user.dto
 
-import kr.disdong.springboot.template.infrastructure.jpa.domain.user.model.UserEntity
+import kr.disdong.springboot.template.core.domain.user.model.User
 
 class CreateUserBody(
     val name: String,
     val phone: String,
 ) {
 
-    fun toUserEntity(): UserEntity {
-        return UserEntity(
+    fun toUserEntity(): User {
+        return User(
             name = name,
             phone = phone,
         )
@@ -20,9 +20,9 @@ class CreateUserResponse(
     val phone: String,
 ) {
     companion object {
-        fun of(userEntity: UserEntity) = CreateUserResponse(
-            name = userEntity.name,
-            phone = userEntity.phone,
+        fun from(user: User) = CreateUserResponse(
+            name = user.name,
+            phone = user.phone,
         )
     }
 }
