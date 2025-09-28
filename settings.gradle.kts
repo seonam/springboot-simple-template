@@ -2,6 +2,7 @@ rootProject.name = "springboot-simple-template"
 
 include(
     "template-infrastructure:feign",
+    "template-infrastructure:redis",
     "template-common",
     "template-core",
     "template-server"

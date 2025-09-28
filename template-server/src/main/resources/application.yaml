@@ -1,3 +1,5 @@
+spring.config.activate.on-profile: default, local
+
 server:
   servlet:
     context-path: /api
@@ -6,7 +8,11 @@ spring:
   config:
     import:
       - core.yaml
+      - redis.yaml
 
 springdoc:
   swagger-ui:
     path: /docs
+
+---
+spring.config.activate.on-profile: dev

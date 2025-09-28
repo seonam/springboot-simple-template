@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":template-common"))
+    implementation(project(":template-infrastructure:redis"))
     api(libs.spring.boot.starter.data.jpa)
     implementation(libs.querydsl.jpa) {
         artifact {
