@@ -1,4 +1,4 @@
-package kr.disdong.springboot.template.server.domain.user.exception
+package kr.disdong.springboot.template.core.domain.user.exception
 
 import kr.disdong.springboot.template.common.exception.NotFoundException
 

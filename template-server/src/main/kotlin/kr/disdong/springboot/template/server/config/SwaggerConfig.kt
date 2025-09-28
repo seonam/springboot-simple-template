@@ -1,4 +1,4 @@
-package kr.disdong.springboot.template.server.core
+package kr.disdong.springboot.template.server.config
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition
 import io.swagger.v3.oas.annotations.servers.Server

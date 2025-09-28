@@ -1,4 +1,4 @@
-package kr.disdong.springboot.template.core.model
+package kr.disdong.springboot.template.core.common.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.MappedSuperclass

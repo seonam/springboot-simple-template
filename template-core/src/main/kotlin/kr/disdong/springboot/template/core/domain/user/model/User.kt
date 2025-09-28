@@ -1,14 +1,14 @@
-package kr.disdong.springboot.template.core.user.model
+package kr.disdong.springboot.template.core.domain.user.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import kr.disdong.springboot.template.core.model.BaseEntity
+import kr.disdong.springboot.template.core.common.model.BaseEntity
 
 @Entity(name = "user")
-class UserEntity(
+class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
