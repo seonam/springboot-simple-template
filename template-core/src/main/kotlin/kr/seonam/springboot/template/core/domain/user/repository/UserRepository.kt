@@ -5,7 +5,9 @@ import kr.seonam.springboot.template.core.domain.user.model.QUser
 import kr.seonam.springboot.template.core.domain.user.model.User
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface UserRepository : JpaRepository<User, Long>, UserCustomRepository
+interface UserRepository :
+    JpaRepository<User, Long>,
+    UserCustomRepository
 
 interface UserCustomRepository {
     fun findByUserId(id: Long): User?
@@ -14,15 +16,13 @@ interface UserCustomRepository {
 class UserRepositoryImpl(
     private val jpaQueryFactory: JPAQueryFactory,
 ) : UserCustomRepository {
-
     private val user = QUser.user
-    override fun findByUserId(id: Long): User? {
-        return jpaQueryFactory
+
+    override fun findByUserId(id: Long): User? =
+        jpaQueryFactory
             .selectFrom(user)
             .where(
                 user.id.eq(id),
-                user.isDeleted.isFalse
-            )
-            .fetchOne()
-    }
+                user.isDeleted.isFalse,
+            ).fetchOne()
 }

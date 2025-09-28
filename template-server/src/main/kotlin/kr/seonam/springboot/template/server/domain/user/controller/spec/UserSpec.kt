@@ -8,10 +8,11 @@ import kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse
 
 @Tag(name = "유저")
 interface UserSpec {
-
     @Operation
     fun getByUserId(userId: Long): TemplateResponse<kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse>
 
     @Operation
-    fun create(body: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody): TemplateResponse<kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse>
+    fun create(
+        body: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody,
+    ): TemplateResponse<kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse>
 }

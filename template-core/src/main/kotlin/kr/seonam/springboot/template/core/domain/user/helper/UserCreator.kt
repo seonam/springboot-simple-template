@@ -10,11 +10,9 @@ import org.springframework.transaction.annotation.Transactional
 class UserCreator(
     private val userRepository: UserRepository,
 ) {
-
     @Transactional
-    fun create(option: UserCreateOption): User {
-        return userRepository.save(
-            option.toUser()
+    fun create(option: UserCreateOption): User =
+        userRepository.save(
+            option.toUser(),
         )
-    }
 }

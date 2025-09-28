@@ -5,7 +5,7 @@ include(
     "template-infrastructure:redis",
     "template-common",
     "template-core",
-    "template-server"
+    "template-server",
 )
 
 dependencyResolutionManagement {
@@ -26,7 +26,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("kr.seonam:spring-version-catalog:0.0.32")
+            from("kr.seonam:spring-version-catalog:0.1.0")
         }
     }
 }

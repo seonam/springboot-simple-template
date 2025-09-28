@@ -18,16 +18,46 @@ allprojects {
 
 subprojects {
     val libs = rootProject.libs
-    apply(plugin = libs.plugins.kotlin.jvm.get().pluginId)
-    apply(plugin = libs.plugins.kotlin.plugin.spring.get().pluginId)
-    apply(plugin = libs.plugins.spring.boot.get().pluginId)
-    apply(plugin = libs.plugins.spring.dependency.management.get().pluginId)
+    apply(
+        plugin =
+            libs.plugins.kotlin.jvm
+                .get()
+                .pluginId,
+    )
+    apply(
+        plugin =
+            libs.plugins.kotlin.plugin.spring
+                .get()
+                .pluginId,
+    )
+    apply(
+        plugin =
+            libs.plugins.spring.boot
+                .get()
+                .pluginId,
+    )
+    apply(
+        plugin =
+            libs.plugins.spring.dependency.management
+                .get()
+                .pluginId,
+    )
 
     // 코틀린은 kotlinc 로 컴파일되므로, 기존 자바로 작성된 Annotation Process 로는 코틀린 annotation 을 처리할 수 없습니다.
     // Kotlin annotation processing tool 을 이용하면 코틀린이 자바 어노테이션을 처리할 때 코틀린 어노테이션 처리를 포함해줍니다.
-    apply(plugin = libs.plugins.kotlin.kapt.get().pluginId)
+    apply(
+        plugin =
+            libs.plugins.kotlin.kapt
+                .get()
+                .pluginId,
+    )
     // ktlint
-    apply(plugin = libs.plugins.ktlint.get().pluginId)
+    apply(
+        plugin =
+            libs.plugins.ktlint
+                .get()
+                .pluginId,
+    )
 
     dependencies {
         implementation(libs.kotlin.reflect)
@@ -44,10 +74,10 @@ subprojects {
 
     java.sourceCompatibility = JavaVersion.VERSION_21
 
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "21"
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+            freeCompilerArgs.addAll(listOf("-Xjsr305=strict"))
         }
     }
 

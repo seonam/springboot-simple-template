@@ -6,13 +6,11 @@ class CreateUserBody(
     val name: String,
     val phone: String,
 ) {
-
-    fun toUserEntity(): User {
-        return User(
+    fun toUserEntity(): User =
+        User(
             name = name,
             phone = phone,
         )
-    }
 }
 
 class CreateUserResponse(
@@ -20,9 +18,10 @@ class CreateUserResponse(
     val phone: String,
 ) {
     companion object {
-        fun from(user: User) = kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse(
-            name = user.name,
-            phone = user.phone,
-        )
+        fun from(user: User) =
+            kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse(
+                name = user.name,
+                phone = user.phone,
+            )
     }
 }

@@ -13,10 +13,11 @@ import org.mockito.kotlin.any
 import org.mockito.kotlin.whenever
 
 internal class UserServiceTest {
-
     private val userReader = mock(UserReader::class.java)
     private val userCreator = mock(UserCreator::class.java)
-    private val sut = kr.seonam.springboot.template.server.domain.user.service.UserService(userReader, userCreator)
+    private val sut =
+        kr.seonam.springboot.template.server.domain.user.service
+            .UserService(userReader, userCreator)
 
     @Test
     fun `샘플 테스트 1`() {
@@ -31,7 +32,11 @@ internal class UserServiceTest {
     fun `샘플 테스트 2`() {
         Mockito.`when`(userCreator.create(any())).thenReturn(User(1, "name", "010"))
 
-        val response = sut.create(kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody("name", "010"))
+        val response =
+            sut.create(
+                kr.seonam.springboot.template.server.domain.user.dto
+                    .CreateUserBody("name", "010"),
+            )
 
         assertEquals("name", response.name)
         assertEquals("010", response.phone)

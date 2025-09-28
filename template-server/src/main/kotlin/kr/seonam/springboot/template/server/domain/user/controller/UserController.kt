@@ -14,14 +14,12 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(
     private val userService: kr.seonam.springboot.template.server.domain.user.service.UserService,
 ) : kr.seonam.springboot.template.server.domain.user.controller.spec.UserSpec {
-
     @GetMapping("/users/{userId}")
     override fun getByUserId(
         @PathVariable userId: Long,
     ) = TemplateResponse.of(userService.getByUserId(userId))
 
     @PostMapping("/users")
-    override fun create(
-        body: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody,
-    ) = TemplateResponse.of(HttpStatus.CREATED, userService.create(body))
+    override fun create(body: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody) =
+        TemplateResponse.of(HttpStatus.CREATED, userService.create(body))
 }

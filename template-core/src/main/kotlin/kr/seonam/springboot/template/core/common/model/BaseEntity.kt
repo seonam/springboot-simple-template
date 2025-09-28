@@ -10,11 +10,9 @@ import java.time.ZonedDateTime
 abstract class BaseEntity(
     @Column
     val isDeleted: Boolean = false,
-
     @Column
     @CreatedDate
     val createdAt: ZonedDateTime = ZonedDateTime.now(),
-
     @Column
     @LastModifiedDate
     val updatedAt: ZonedDateTime = ZonedDateTime.now(),

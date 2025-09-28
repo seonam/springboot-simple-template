@@ -4,9 +4,6 @@ import feign.Logger
 import org.springframework.context.annotation.Bean
 
 open class DefaultFeignConfig {
-
     @Bean
-    fun feignLoggerLevel(): Logger.Level {
-        return Logger.Level.BASIC
-    }
+    fun feignLoggerLevel(): Logger.Level = Logger.Level.BASIC
 }

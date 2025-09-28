@@ -12,15 +12,17 @@ class UserService(
     private val userReader: UserReader,
     private val userCreator: UserCreator,
 ) {
-
     fun getByUserId(userId: Long) =
         kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse.from(
-            userReader.getByUserId(userId)
+            userReader.getByUserId(userId),
         )
 
-    fun create(request: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody): kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse {
-        return kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse.from(userCreator.create(request.toOption()))
-    }
+    fun create(
+        request: kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody,
+    ): kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse =
+        kr.seonam.springboot.template.server.domain.user.dto.CreateUserResponse
+            .from(userCreator.create(request.toOption()))
 
-    private fun kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody.toOption() = UserCreateOption(name = name, phone = phone)
+    private fun kr.seonam.springboot.template.server.domain.user.dto.CreateUserBody.toOption() =
+        UserCreateOption(name = name, phone = phone)
 }

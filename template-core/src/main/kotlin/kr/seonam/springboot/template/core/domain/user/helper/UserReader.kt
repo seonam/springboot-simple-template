@@ -15,17 +15,17 @@ class UserReader(
 ) {
     @Transactional(readOnly = true)
     fun getByUserId(userId: Long): User {
-        val user = userRedisClient.get(userId)?.toUser()
-            ?: userRepository.findByUserId(userId)?.also {
-                userRedisClient.set(it.toUserCache())
-            }
-            ?: throw UserNotFound(userId)
+        val user =
+            userRedisClient.get(userId)?.toUser()
+                ?: userRepository.findByUserId(userId)?.also {
+                    userRedisClient.set(it.toUserCache())
+                }
+                ?: throw UserNotFound(userId)
 
         return user
     }
 
     private fun User.toUserCache() = UserCache(id, name, phone)
-    private fun UserCache.toUser(): User {
-        return User(id, name, phone)
-    }
+
+    private fun UserCache.toUser(): User = User(id, name, phone)
 }

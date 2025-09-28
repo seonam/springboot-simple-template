@@ -4,10 +4,9 @@ data class UserCreateOption(
     val name: String,
     val phone: String,
 ) {
-    fun toUser(): User {
-        return User(
+    fun toUser(): User =
+        User(
             name = name,
             phone = phone,
         )
-    }
 }

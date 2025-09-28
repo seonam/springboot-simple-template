@@ -18,26 +18,22 @@ import java.util.TimeZone
 
 @Configuration
 class RedisConfig {
-
     @Bean
-    fun redisConnectionFactory(
-        redisProperties: RedisProperties,
-    ): RedisConnectionFactory {
-        return LettuceConnectionFactory(
+    fun redisConnectionFactory(redisProperties: RedisProperties): RedisConnectionFactory =
+        LettuceConnectionFactory(
             redisProperties.host,
-            redisProperties.port
+            redisProperties.port,
         )
-    }
 
     @Bean
-    fun userRedisTemplate(
-        redisConnectionFactory: RedisConnectionFactory
-    ): RedisTemplate<String, UserCache> {
-        return createObjectRedisTemplate(redisConnectionFactory, UserCache::class.java)
-    }
+    fun userRedisTemplate(redisConnectionFactory: RedisConnectionFactory): RedisTemplate<String, UserCache> =
+        createObjectRedisTemplate(redisConnectionFactory, UserCache::class.java)
 
-    private fun <T : Any> createObjectRedisTemplate(connectionFactory: RedisConnectionFactory, classInfo: Class<T>): RedisTemplate<String, T> {
-        return RedisTemplate<String, T>().apply {
+    private fun <T : Any> createObjectRedisTemplate(
+        connectionFactory: RedisConnectionFactory,
+        classInfo: Class<T>,
+    ): RedisTemplate<String, T> =
+        RedisTemplate<String, T>().apply {
             setConnectionFactory(connectionFactory)
 
             val objectMapper = ObjectMapper()
@@ -51,5 +47,4 @@ class RedisConfig {
             keySerializer = StringRedisSerializer()
             valueSerializer = Jackson2JsonRedisSerializer(objectMapper, classInfo)
         }
-    }
 }

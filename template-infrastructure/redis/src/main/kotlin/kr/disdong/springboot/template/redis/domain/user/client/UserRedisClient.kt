@@ -6,9 +6,8 @@ import org.springframework.stereotype.Component
 
 @Component
 class UserRedisClient(
-    private val userRedisTemplate: RedisTemplate<String, UserCache>
+    private val userRedisTemplate: RedisTemplate<String, UserCache>,
 ) {
-
     companion object {
         private const val KEY = "user"
     }
@@ -18,5 +17,6 @@ class UserRedisClient(
     fun set(value: UserCache) = userRedisTemplate.opsForValue().set(userKey(value), value)
 
     private fun userKey(value: UserCache): String = userKey(value.id)
+
     private fun userKey(id: Long): String = "$KEY-$id"
 }

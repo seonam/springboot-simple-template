@@ -15,25 +15,29 @@ import org.springframework.stereotype.Component
 @OpenAPIDefinition(servers = [Server(url = "/api", description = "Default Server URL")])
 class SwaggerConfig {
     @Bean
-    fun openAPI(@Value("v1.0") appVersion: String?): OpenAPI {
-        val info = Info()
-            .title("Template!")
-            .version(appVersion)
-            .description("Template!")
+    fun openAPI(
+        @Value("v1.0") appVersion: String?,
+    ): OpenAPI {
+        val info =
+            Info()
+                .title("Template!")
+                .version(appVersion)
+                .description("Template!")
 
         // 인증
         val security = SecurityRequirement().addList("AccessToken")
 
-        val components = Components()
-            .addSecuritySchemes(
-                "AccessToken",
-                SecurityScheme()
-                    .name("AccessToken")
-                    .description("Access Token 혹은 휴대폰번호를 입력하면 됩니다.")
-                    .type(SecurityScheme.Type.HTTP)
-                    .scheme("bearer")
-                    .bearerFormat("JWT")
-            )
+        val components =
+            Components()
+                .addSecuritySchemes(
+                    "AccessToken",
+                    SecurityScheme()
+                        .name("AccessToken")
+                        .description("Access Token 혹은 휴대폰번호를 입력하면 됩니다.")
+                        .type(SecurityScheme.Type.HTTP)
+                        .scheme("bearer")
+                        .bearerFormat("JWT"),
+                )
 
         return OpenAPI()
             .info(info)
