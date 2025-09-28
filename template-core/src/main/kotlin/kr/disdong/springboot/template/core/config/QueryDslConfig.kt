@@ -1,4 +1,4 @@
-package kr.disdong.springboot.template.infrastructure.jpa.config
+package kr.disdong.springboot.template.core.config
 
 import com.querydsl.jpa.impl.JPAQueryFactory
 import jakarta.persistence.EntityManager

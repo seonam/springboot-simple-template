@@ -1,6 +1,6 @@
-package kr.disdong.springboot.template.infrastructure.jpa
+package kr.disdong.springboot.template.core
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class JpaApplication
+class CoreApplication

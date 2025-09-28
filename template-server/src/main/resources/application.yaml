@@ -5,7 +5,7 @@ server:
 spring:
   config:
     import:
-      - persistence.yaml
+      - core.yaml
 
 springdoc:
   swagger-ui:

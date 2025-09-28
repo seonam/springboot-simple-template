@@ -1,11 +1,11 @@
-package kr.disdong.springboot.template.infrastructure.jpa.domain.user.model
+package kr.disdong.springboot.template.core.user.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import kr.disdong.springboot.template.infrastructure.jpa.common.model.BaseEntity
+import kr.disdong.springboot.template.core.model.BaseEntity
 
 @Entity(name = "user")
 class UserEntity(

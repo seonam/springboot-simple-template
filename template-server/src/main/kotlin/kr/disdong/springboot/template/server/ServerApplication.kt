@@ -1,12 +1,12 @@
 package kr.disdong.springboot.template.server
 
-import kr.disdong.springboot.template.infrastructure.jpa.JpaApplication
+import kr.disdong.springboot.template.core.CoreApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Import
 
 @SpringBootApplication
-@Import(JpaApplication::class)
+@Import(CoreApplication::class)
 class ServerApplication
 
 fun main(args: Array<String>) {

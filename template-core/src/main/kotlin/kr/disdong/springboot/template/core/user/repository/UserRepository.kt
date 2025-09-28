@@ -1,8 +1,8 @@
-package kr.disdong.springboot.template.infrastructure.jpa.domain.user.repository
+package kr.disdong.springboot.template.core.user.repository
 
 import com.querydsl.jpa.impl.JPAQueryFactory
-import kr.disdong.springboot.template.infrastructure.jpa.domain.user.model.QUserEntity
-import kr.disdong.springboot.template.infrastructure.jpa.domain.user.model.UserEntity
+import kr.disdong.springboot.template.core.user.model.QUserEntity
+import kr.disdong.springboot.template.core.user.model.UserEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserRepository : JpaRepository<UserEntity, Long>, UserCustomRepository

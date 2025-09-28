@@ -1,6 +1,7 @@
 package kr.disdong.springboot.template.server.domain.user.dto
 
-import kr.disdong.springboot.template.infrastructure.jpa.domain.user.model.UserEntity
+import kr.disdong.springboot.template.core.user.model.UserEntity
+
 
 class CreateUserBody(
     val name: String,
