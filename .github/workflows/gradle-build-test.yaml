@@ -21,6 +21,6 @@ jobs:
       - name: Build with Gradle
         # TODO remove
         env:
-          DISDONG_USERNAME: ${{ secrets.DISDONG_USERNAME }}
-          DISDONG_TOKEN: ${{ secrets.DISDONG_TOKEN }}
+          SEONAM_USERNAME: ${{ secrets.SEONAM_USERNAME }}
+          SEONAM_TOKEN: ${{ secrets.SEONAM_TOKEN }}
         run: ./gradlew clean build
