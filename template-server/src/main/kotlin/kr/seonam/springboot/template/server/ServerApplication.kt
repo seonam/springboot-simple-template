@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Import
 class ServerApplication
 
 fun main(args: Array<String>) {
-    runApplication<kr.seonam.springboot.template.server.ServerApplication>(*args)
+    runApplication<ServerApplication>(*args)
 }

@@ -1,9 +1,8 @@
-package kr.seonam.springboot.template.server.domain.user
+package kr.seonam.springboot.template.server.domain.user.service
 
 import kr.seonam.springboot.template.core.domain.user.fixture.UserFixture
 import kr.seonam.springboot.template.core.domain.user.repository.UserRepository
 import kr.seonam.springboot.template.server.core.IntegrationTestConfig
-import kr.seonam.springboot.template.server.domain.user.service.UserService
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertNotNull
