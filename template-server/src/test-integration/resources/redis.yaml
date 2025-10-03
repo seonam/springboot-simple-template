@@ -1,0 +1,6 @@
+spring.config.activate.on-profile: test
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6381
