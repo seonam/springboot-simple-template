@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import kr.disdong.springboot.template.redis.domain.user.dto.UserCache
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties
+import org.springframework.boot.data.redis.autoconfigure.DataRedisProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.connection.RedisConnectionFactory
@@ -19,7 +19,7 @@ import java.util.TimeZone
 @Configuration
 class RedisConfig {
     @Bean
-    fun redisConnectionFactory(redisProperties: RedisProperties): RedisConnectionFactory =
+    fun redisConnectionFactory(redisProperties: DataRedisProperties): RedisConnectionFactory =
         LettuceConnectionFactory(
             redisProperties.host,
             redisProperties.port,

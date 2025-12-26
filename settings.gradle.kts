@@ -26,7 +26,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("kr.seonam:spring-version-catalog:0.1.0")
+            from("kr.seonam:spring-version-catalog:0.1.3")
         }
     }
 }

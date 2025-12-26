@@ -10,6 +10,8 @@ dependencies {
     testImplementation(project(path = ":template-core", configuration = "testJarConfig"))
     testImplementation(libs.embedded.redis)
     testRuntimeOnly(libs.h2.database)
+    testImplementation(libs.spring.boot.starter.web)
+    testImplementation(libs.spring.boot.starter.webmvc.test)
 }
 
 tasks.getByName("bootJar") {
